@@ -7,8 +7,8 @@ interface ContextProps {
     locale: string;
     brand: string;
     book: string;
-    fetchData: any;
-    generateUrl: any;
+    fetchData: Function;
+    generateUrl: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 export const MasterContext = createContext({} as ContextProps);
@@ -25,11 +25,11 @@ export class MasterProvider extends Component {
         locale: '',
         brand: '',
         book: '',
-        generateUrl: (e: React.ChangeEvent<HTMLInputElement>): void => {
+        generateUrl: (e: React.ChangeEvent<HTMLSelectElement>): void => {
     
             this.setState({
                 [e.target.id]: e.target.value
-            }, () => console.log(this.state.environment));
+            });
         }
     }
 

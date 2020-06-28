@@ -25,7 +25,7 @@ const RequiredFields: React.SFC = () => {
                 <SelectDropDown jsondata={EnvJSON} id="environment" defaultOption="-- select an environment -- "/>
                 <SelectDropDown jsondata={LocaleJSON} id="locale" defaultOption="-- select locale -- "/>
                 <SelectDropDown jsondata={BrandJSON} id="brand" defaultOption="-- select brand -- "/>
-                <SelectDropDown jsondata={SearchJSON} id="search" defaultOption="-- book or search -- "/>
+                <SelectDropDown jsondata={SearchJSON} id="book" defaultOption="-- book or search -- "/>
 
             </section>
         </Fragment>

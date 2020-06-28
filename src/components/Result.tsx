@@ -8,17 +8,17 @@ export interface ResultProps {
 const Result: React.SFC<ResultProps> = () => {
 
 
-    const {protocol, environment} = useContext(MasterContext);
+    const {protocol, environment, locale, brand, book} = useContext(MasterContext);
 
     useEffect(() => {
         console.log('result updated')
-    }, [protocol, environment]);
+    }, [environment, locale, brand, book ]);
 
     return ( 
         <section className="results-container section-container">
 
             <fieldset>
-                 <textarea id="result" placeholder="https://">{`${protocol}${environment}`}</textarea>
+                 <textarea id="result" placeholder={protocol} value={`${protocol}${environment}${locale}${brand}${book}`}></textarea>
             </fieldset>
 
             <section className="result-cta-section section-container">
