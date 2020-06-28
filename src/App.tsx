@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import './sass/styles.scss';
+import Intro from './components/Intro';
+import RequiredFields from './components/RequiredFields';
+import OptionalFields from './components/OptionalFields';
+import Result from './components/Result';
+import PDFSection from './components/PDFSection';
+import { MasterProvider } from './contexts/MasterContext';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main className="main-wrapper">
+        <MasterProvider>
+          <Header/>
+          <Intro/>
+          <RequiredFields/>
+          <OptionalFields/>
+          <Result/>
+          <PDFSection/>
+        </MasterProvider>
+      </main>
     </div>
   );
 }
